@@ -1,0 +1,24 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.terraform/
+crash.log
+override.tf
+override.tf.json
+terraform.rc
+terraform.d/
+tfplan.json
+*.plan
+
+# Sentinel files
+.sentinel
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes

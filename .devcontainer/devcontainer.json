@@ -1,0 +1,20 @@
+{
+    "name": "Terraform and Sentinel Development Container",
+    "image": "mcr.microsoft.com/devcontainers/base:1-jammy",
+    "features": {
+        "ghcr.io/devcontainers/features/terraform:1": {
+            "installSentinel": true
+        },
+        "ghcr.io/devcontainers/features/azure-cli": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "hashicorp.terraform",
+                "hashicorp.sentinel",
+                "hashicorp.hcl"
+            ]
+        }
+    },
+    "postCreateCommand": "terraform --version && sentinel --version"
+}

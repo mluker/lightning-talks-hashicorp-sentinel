@@ -1,0 +1,16 @@
+import "tfplan/v2" as tfplan
+
+resource_changes = filter tfplan.resource_changes as _, rc {
+    (rc.change.actions contains "create" or rc.change.actions is ["update"]) and 
+    rc.type is "azurerm_storage_account"
+}
+
+only_allow_grs = rule {
+    all resource_changes as _, rc {
+        rc.change.after.account_replication_type is "LRS"
+    }
+}
+
+main = rule {
+    only_allow_grs
+}
