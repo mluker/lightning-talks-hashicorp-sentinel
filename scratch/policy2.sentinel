@@ -1,6 +1,0 @@
-import "tfconfig/v2" as tfconfig
-
-main = rule {
-    # filename_value = tfconfig.resources.local_file.accounts.config.filename
-    not (tfconfig.resources["azurerm_resource_group"].config.location is "eastus")
-}
