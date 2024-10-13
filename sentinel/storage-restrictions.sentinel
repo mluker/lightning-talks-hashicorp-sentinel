@@ -5,12 +5,12 @@ resource_changes = filter tfplan.resource_changes as _, rc {
     rc.type is "azurerm_storage_account"
 }
 
-only_allow_grs = rule {
+only_allow_lrs = rule {
     all resource_changes as _, rc {
         rc.change.after.account_replication_type is "LRS"
     }
 }
 
 main = rule {
-    only_allow_grs
+    only_allow_lrs
 }

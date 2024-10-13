@@ -20,7 +20,8 @@ Resources:
     ```bash
     az login
     az account show --query id --output tsv
-1. Set the `azure_subscription_id` with the value from the previous step variable in terraform.tfvars
+1. Rename the file `terraform.tfvars.example` to `terraform.tfvars`
+1. Set the `azure_subscription_id` value in terraform.tfvars using the output from the previous step.
 1. Run the following commands:
     ```bash
     cd ./terraform
