@@ -1,7 +1,7 @@
 import "tfplan/v2" as tfplan
 
 resource_changes = filter tfplan.resource_changes as _, rc {
-    (rc.change.actions contains "create" or rc.change.actions is ["update"])    
+    (rc.change.actions contains "create" or rc.change.actions is ["update"])
 }
 
 allowed_locations = [
@@ -9,12 +9,13 @@ allowed_locations = [
     "westus",
 ]
 
-no_invalid_locations = rule {
+# Rule to check if all resources are in allowed locations
+valid_locations = rule {
     all resource_changes as _, instance {
         allowed_locations contains instance.change.after.location
     }
 }
 
 main = rule {
-    no_invalid_locations
+    valid_locations
 }
