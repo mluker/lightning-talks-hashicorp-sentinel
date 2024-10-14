@@ -11,7 +11,7 @@ Sentinel policies are text files written using the Sentinel language. The polici
 Resources:
 * Docs: https://developer.hashicorp.com/sentinel?ajs_aid=3975cddd-bb64-495a-ab06-df18b7752b75
 * Playground: https://play.sentinelproject.io/
-* Imports: https://developer.hashicorp.com/terraform/cloud-docs/policy-enforcement/sentinel/import/tfconfig-v2
+* Imports: https://developer.hashicorp.com/terraform/cloud-docs/policy-enforcement/sentinel/import/tfplan-v2
 
 ## Getting started:
 
